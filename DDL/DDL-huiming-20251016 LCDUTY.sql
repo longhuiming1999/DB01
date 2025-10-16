@@ -1,0 +1,22 @@
+drop table LCDUTY;
+create table LCDUTY(
+	CONTNO VARCHAR(20) not null COMMENT '保单号',
+	POLNO VARCHAR(20) not null COMMENT '险种号',
+	DUTYCODE VARCHAR(20) not null COMMENT '责任编码',
+	
+	AMNT DECIMAL(16,2) not null COMMENT '保额',
+	PREM DECIMAL(16,2) not null COMMENT '每期保费',
+	
+	PAYINTV INTEGER not null COMMENT '交费方式',
+	PAYTODATE DATE COMMENT '交至日期',
+	PAYENDDATE DATE COMMENT '交费终止日',
+	
+	OPERATOR varchar(20) not null COMMENT '操作人',
+	MAKEDATE DATE NOT NULL COMMENT '入机日期',
+    MAKETIME VARCHAR(10) NOT NULL COMMENT '入机时间',
+    MODIFYDATE DATE NOT NULL COMMENT '最后一次修改日期',
+    MODIFYTIME VARCHAR(10) NOT NULL COMMENT '最后一次修改时间',
+    
+    primary key (CONTNO, POLNO, DUTYCODE)
+)
+COMMENT = '险种责任表';
